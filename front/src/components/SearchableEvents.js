@@ -1,16 +1,16 @@
-import { connect } from 'react-redux'
-import EventTable from './EventTable'
+import { connect } from 'react-redux';
+import EventTable from './EventTable';
 
 function searchEvents({ events, query }) {
-    return events.filter(e => e.name.includes(query))
+  return events.filter(e => e.name.includes(query));
 }
 
 function mapStateToProps(state) {
-    const events = searchEvents(state)
+  const events = searchEvents(state);
 
-    return {
-        events
-    }
+  return {
+    events
+  };
 }
 
-export default connect(mapStateToProps)(EventTable)
+export default connect(mapStateToProps)(EventTable);

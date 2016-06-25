@@ -1,21 +1,22 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { searchEvents } from '../actions'
+import React from 'react';
+import { connect } from 'react-redux';
+import { searchEvents } from '../actions';
 
-class SearchBar extends Component {
-    constructor(props) {
-        super(props)
-        this.dispatch = props.dispatch
-    }
+class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.dispatch = props.dispatch;
+  }
 
-    render() {
-        return (
-            <input type='text' placeholder='Search for events...'
-                onChange={e => this.dispatch(searchEvents(e.target.value))}
-            />
-        )
-    }
+  render() {
+    return (
+      <input
+        type="text"
+        placeholder="Search for events..."
+        onChange={e => this.dispatch(searchEvents(e.target.value))}
+      />
+    );
+  }
 }
 
-export default connect()(SearchBar)
-
+export default connect()(SearchBar);

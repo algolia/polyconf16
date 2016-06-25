@@ -1,11 +1,21 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { searchEvents } from '../actions';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {searchEvents} from '../actions';
 
 class SearchBar extends React.Component {
+  static get PropTypes() {
+    return {
+      dispatch: PropTypes.function.isRequired
+    };
+  }
+
   constructor(props) {
     super(props);
-    this.dispatch = props.dispatch;
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(e) {
+    this.dispatch(searchEvents(e.target.value));
   }
 
   render() {
@@ -13,7 +23,7 @@ class SearchBar extends React.Component {
       <input
         type="text"
         placeholder="Search for events..."
-        onChange={e => this.dispatch(searchEvents(e.target.value))}
+        onChange={this.onChange}
       />
     );
   }

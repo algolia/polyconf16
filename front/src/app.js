@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import reducer from './reducers';
 import App from './components/App';
-import { createStore } from 'redux';
-import { setEvents } from './actions';
-import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+import {setEvents} from './actions';
+import {Provider} from 'react-redux';
 
 const events = [
   {
@@ -24,7 +23,7 @@ const events = [
   }
 ];
 
-let store = createStore(reducer);
+const store = configureStore();
 store.dispatch(setEvents(events));
 
 ReactDOM.render((

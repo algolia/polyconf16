@@ -1,8 +1,14 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { addEvent } from '../actions';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {addEvent} from '../actions';
 
-class ModalForm extends Component {
+class ModalForm extends React.Component {
+  static get propTypes() {
+    return {
+      dispatch: PropTypes.function.isRequired
+    };
+  }
+
   constructor(props) {
     super(props);
     this.dispatch = props.dispatch;

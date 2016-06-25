@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import * as T from '../actions/types';
 
 function people(peopleList = [], action) {
@@ -27,7 +27,7 @@ function events(eventsList = [], action) {
           return e;
         }
 
-        return { ...e, people: people(e.people, action) };
+        return {...e, people: people(e.people, action)};
       });
     default:
       return eventsList;
@@ -43,8 +43,21 @@ function query(q = '', action) {
   }
 }
 
+function addEventModal(state = {visible: false}, {type, visible}) {
+  switch (type) {
+    case T.TOGGLE_MODAL:
+      return {
+        ...state,
+        visible
+      };
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   events,
-  query
+  query,
+  addEventModal
 });
 

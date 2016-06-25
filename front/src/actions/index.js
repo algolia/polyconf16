@@ -28,6 +28,13 @@ export function searchEvents(query) {
   };
 }
 
+export function toggleModal(visible) {
+  return {
+    type: T.TOGGLE_MODAL,
+    visible
+  };
+}
+
 export function addPerson(eventId, person) {
   return {
     type: T.ADD_PERSON,

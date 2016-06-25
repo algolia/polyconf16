@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import EventTable from './EventTable';
 
-function searchEvents({ events, query }) {
+function searchEvents({events, query}) {
   return events.filter(e => e.name.includes(query));
 }
 

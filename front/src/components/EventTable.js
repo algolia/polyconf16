@@ -4,13 +4,15 @@ import EventRow from './EventRow';
 class EventTable extends React.Component {
   static get propTypes() {
     return {
-      events: PropTypes.array.shape({
-        name: PropTypes.string,
-        tags: PropTypes.array,
-        start: PropTypes.string,
-        end: PropTypes.string,
-        participants: PropTypes.array
-      }).isRequired
+      events: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          tags: PropTypes.array,
+          start: PropTypes.string,
+          end: PropTypes.string,
+          participants: PropTypes.arrayOf(PropTypes.string)
+        })
+      ).isRequired
     };
   }
 

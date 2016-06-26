@@ -5,7 +5,7 @@ import {searchEvents} from '../actions';
 class SearchBar extends React.Component {
   static get PropTypes() {
     return {
-      dispatch: PropTypes.function.isRequired
+      dispatch: PropTypes.func.isRequired
     };
   }
 

@@ -5,7 +5,7 @@ import {addEvent} from '../actions';
 class ModalForm extends React.Component {
   static get propTypes() {
     return {
-      dispatch: PropTypes.function.isRequired
+      dispatch: PropTypes.func.isRequired
     };
   }
 

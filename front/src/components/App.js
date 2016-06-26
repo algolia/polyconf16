@@ -8,7 +8,7 @@ import {toggleModal} from '../actions';
 class App extends React.Component {
   static get propTypes() {
     return {
-      dispatch: PropTypes.function.isRequired
+      dispatch: PropTypes.func.isRequired
     };
   }
 

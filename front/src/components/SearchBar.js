@@ -21,6 +21,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <input
+        className="input is-medium"
         type="text"
         placeholder="Search for events..."
         onChange={this.onChange}

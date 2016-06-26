@@ -19,29 +19,42 @@ class AddEventModal extends React.Component {
     return (
       <div>
         <div
-          className="modal modal-open fade in"
-          role="dialog"
-          aria-labelledby="AddEventModal"
-          style={{display: 'block'}}
+          style={{display: 'flex'}}
+          className="modal"
         >
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <button
-                  type="button"
-                  className="close"
-                  aria-label="Close"
-                  onClick={onClose}
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 className="modal-title">New Event</h4>
-              </div>
-              <ModalForm />
+          <div
+            className="modal-background"
+            onClick={this.props.onClose}
+          />
+          <div className="modal-card">
+            <div className="modal-card-head">
+              <p className="modal-card-title">Insert a new Venue</p>
+              <button
+                className="delete"
+                onClick={this.props.onClose}
+              />
+            </div>
+            <div className="modal-card-body">
+              <ModalForm onClose={onClose} />
+            </div>
+            <div className="modal-card-foot">
+              <button
+                type="submit"
+                className="button is-success"
+                data-dismiss="modal" onClick={() =>{}}
+              >
+                Add
+              </button>
+              <button
+                className="button"
+                data-dismiss="modal"
+                onClick={this.props.onClose}
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
-        <div className="modal-backdrop in"></div>
       </div>
     );
   }

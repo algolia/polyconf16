@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import SearchBar from './SearchBar';
 import AddEventModal from './AddEventModal';
 import {connect} from 'react-redux';
+import Nav from './Nav';
 import SearchableEvents from './SearchableEvents';
 import {toggleModal} from '../actions';
 
@@ -29,21 +30,42 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <SearchBar />
-        <button
-          className="pull-right btn btn-primary"
-          onClick={this.handleButtonClick}
-        >
-          <i
-            className="fa fa-plus"
-            aria-hidden="true"
-          />
-          Add Venue
-        </button>
-        <SearchableEvents />
-        <AddEventModal
-          onClose={this.handleCloseModal}
-        />
+        <div className="hero header">
+          <div className="hero-head">
+            <div className="container">
+              <Nav />
+            </div>
+          </div>
+        </div>
+        <section className="section">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-10">
+                <SearchBar />
+              </div>
+              <div className="column">
+                <button
+                  className="button is-pulled-right is-danger is-medium is-outlined"
+                  onClick={this.handleButtonClick}
+                >
+                  <i
+                    className="fa fa-plus"
+                    aria-hidden="true"
+                  />
+                  {'  Add Venue'}
+                </button>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column">
+                <SearchableEvents />
+              </div>
+            </div>
+            <AddEventModal
+              onClose={this.handleCloseModal}
+            />
+          </div>
+        </section>
       </div>
     );
   }

@@ -20,7 +20,7 @@ class EventTable extends React.Component {
     const {events} = this.props;
 
     return (
-      <table className="table">
+      <table styles={{marginTop: 30}}className="table is-bordered">
         <thead>
           <tr>
             <td>Name</td>

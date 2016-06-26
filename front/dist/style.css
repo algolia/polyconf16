@@ -1,0 +1,36 @@
+html, body {
+  height: 100%;
+}
+
+.hero.header {
+  background: #db4c2c; background:-webkit-linear-gradient(top, #db4c2c, #e27158); background: -moz-linear-gradient(top, #db4c2c, #e27158); background: -ms-linear-gradient(top, #db4c2c, #e27158); background: -o-linear-gradient(top, #db4c2c, #e27158); background: linear-gradient(to bottom, #db4c2c, #e27158);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav .title {
+  color: white;
+}
+
+.logo {
+  width: 35px;
+  margin-right: 15px;
+}
+
+.logo path {
+  fill: white;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 2px;
+  align-self: center;
+}
+
+.user-avatar img {
+  max-width: 100%;
+  border-radius: 50%;
+}

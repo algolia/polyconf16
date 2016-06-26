@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --debug",
-    "watch": "webpack --debug --watch"
+    "build": "webpack --debug"
   },
   "keywords": [],
   "author": "",
@@ -27,7 +27,9 @@
   "dependencies": {
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-hot-loader": "^1.3.0",
     "react-redux": "^4.4.5",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "webpack-dev-server": "^1.14.1"
   }
 }

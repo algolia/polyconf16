@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {searchEvents} from '../actions';
 
 class SearchBar extends React.Component {
-  static get PropTypes() {
+  static get propTypes() {
     return {
       dispatch: PropTypes.func.isRequired
     };
@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
   }
 
   onChange(e) {
-    this.dispatch(searchEvents(e.target.value));
+    this.props.dispatch(searchEvents(e.target.value));
   }
 
   render() {

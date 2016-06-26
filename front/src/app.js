@@ -20,6 +20,13 @@ const events = [
     start: '14:00',
     end: '16:30',
     people: ['d', 'e', 'f']
+  },
+  {
+    name: 'Luigi\'s Traditional Fish & Chips',
+    tags: ['British', 'Fish', 'Chips'],
+    start: '13:30',
+    end: '14:00',
+    people: ['a']
   }
 ];
 

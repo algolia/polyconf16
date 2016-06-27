@@ -27,10 +27,38 @@ html, body {
   border-radius: 50%;
   background-color: white;
   padding: 2px;
-  align-self: center;
+  align-self: center !important;
+  display: flex;
 }
 
 .user-avatar img {
   max-width: 100%;
   border-radius: 50%;
+}
+
+.day-label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.people-going {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.people-going .user-avatar {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  margin-right: 3px;
+}
+
+.partecipants {
+  margin-right: auto;
+}
+
+.emoji-tags span {
+  margin-right: 3px;
 }

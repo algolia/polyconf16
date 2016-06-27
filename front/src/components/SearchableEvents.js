@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
-import EventTable from './EventTable';
+import VenueEvents from './VenueEvents';
 
 function searchEvents({events, query}) {
-  return events.filter(e => e.name.includes(query));
+  return events.filter(e => e.name.match(new RegExp(query, 'i')));
 }
 
 function mapStateToProps(state) {
@@ -13,4 +13,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(EventTable);
+export default connect(mapStateToProps)(VenueEvents);

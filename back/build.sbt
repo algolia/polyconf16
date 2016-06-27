@@ -27,6 +27,7 @@ libraryDependencies += "org.scalatra" %% "scalatra-scalatest" % scalatraVersion 
 libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % "test"
 
 assemblyJarName in assembly := "polyconf.jar"
+mainClass in assembly := Some("polyconf16.PubliApi")
 
 assemblyMergeStrategy in assembly := {
   case PathList("META-INF", "io.netty.versions.properties") => MergeStrategy.concat

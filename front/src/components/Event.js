@@ -36,11 +36,11 @@ class Event extends React.Component {
                 <h3 className="subtitle">Fast Food Burgers</h3>
                 <a href="">88 Rue De Rivoli, Paris</a>
                 <div className="people-going">
-                  <div className="partecipants">
+                  <div className="participants">
                     {
                       people.length
-                        ? `${people.length} partecipants`
-                        : 'No partecipants 😓'
+                        ? `${people.length} participants`
+                        : 'No participants 😓'
                     }
                   </div>
                   <div className="user-avatar">

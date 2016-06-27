@@ -41,7 +41,7 @@ class AddEventModal extends React.Component {
               <button
                 type="submit"
                 className="button is-success"
-                data-dismiss="modal" onClick={() =>{}}
+                data-dismiss="modal" onClick={() => { console.log('TODO: Re-implement ME'); }}
               >
                 Add
               </button>

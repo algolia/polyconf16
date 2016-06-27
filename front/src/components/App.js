@@ -45,11 +45,11 @@ class App extends React.Component {
               </div>
               <div className="column">
                 <button
-                  className="button is-danger is-fullwidth is-medium is-outlined"
+                  className="button is-danger is is-medium is-outlined"
                   onClick={this.handleButtonClick}
                 >
                   <span className="icon">
-                    <i className="fa fa-plus-circle"/>
+                    <i className="fa fa-plus-circle" />
                   </span>
                   <span>Add Venue</span>
                 </button>

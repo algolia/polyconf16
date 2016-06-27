@@ -62,3 +62,7 @@ html, body {
 .emoji-tags span {
   margin-right: 3px;
 }
+
+.event-item {
+  margin-bottom: 35px;
+}

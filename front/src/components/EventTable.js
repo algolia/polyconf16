@@ -32,7 +32,10 @@ class EventTable extends React.Component {
         </thead>
         <tbody>
           {events.map((e, i) => (
-            <EventRow key={i} {...e} />
+            <div>
+
+              <EventRow key={i} {...e} />
+            </div>
           ))}
         </tbody>
       </table>

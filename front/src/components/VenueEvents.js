@@ -1,48 +1,36 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import Event from './Event';
 
 class VenueEvents extends React.Component {
+  static get propTypes() {
+    return {
+      events: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          tags: PropTypes.array,
+          start: PropTypes.string,
+          end: PropTypes.string,
+          participants: PropTypes.arrayOf(PropTypes.string)
+        })
+      ).isRequired
+    };
+  }
+
   render() {
+    const {events} = this.props;
+
     return (
       <section className="events">
-        <strong className="day-label">Monday, June 27</strong>
-        <div className="box">
-          <article>
-            <div>
-              <div className="columns">
-                <div className="column is-narrow">
-                  <h2>12:00 PM</h2>
-                </div>
-                <div className="column">
-                  <div className="emoji-tags">
-                    <span>🍔</span>
-                    <span>🌮</span>
-                    <span>🍟</span>
-                  </div>
-                  <h2 className="title">McDonald's</h2>
-                  <h3 className="subtitle">Fast Food Burgers</h3>
-                  <a href="">88 Rue De Rivoli, Paris</a>
-                  <div className="people-going">
-                    <div className="partecipants">
-                      4 partecipants
-                    </div>
-                    <div className="user-avatar">
-                      <img src="https://randomuser.me/api/portraits/men/46.jpg" />
-                    </div>
-                    <div className="user-avatar">
-                      <img src="https://randomuser.me/api/portraits/women/56.jpg" />
-                    </div>
-                    <div className="user-avatar">
-                      <img src="https://randomuser.me/api/portraits/women/22.jpg" />
-                    </div>
-                    <div className="user-avatar">
-                      <img src="https://randomuser.me/api/portraits/men/70.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
+        {events.map((e, i) => (
+          <div className="event-item">
+            {
+              (i === 0)
+                ? <strong className="day-label">Monday, June 27</strong>
+                : null
+            }
+            <Event key={i} {...e} />
+          </div>
+        ))}
       </section>
     );
   }

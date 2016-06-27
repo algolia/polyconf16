@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {submitAddVenueForm} from '../actions';
 import ModalForm from './ModalForm';
 
 class AddEventModal extends React.Component {
@@ -7,8 +8,18 @@ class AddEventModal extends React.Component {
   static propTypes() {
     return {
       showModal: PropTypes.boolean.isRequired,
-      onClose: PropTypes.function.isRequired
+      onClose: PropTypes.function.isRequired,
+      dispatch: PropTypes.function.isRequired
     };
+  }
+
+  constructor(props) {
+    super(props);
+    this.addEvent = this.addEvent.bind(this);
+  }
+
+  addEvent() {
+    this.props.dispatch(submitAddVenueForm());
   }
 
   render() {
@@ -41,7 +52,7 @@ class AddEventModal extends React.Component {
               <button
                 type="submit"
                 className="button is-success"
-                data-dismiss="modal" onClick={() => { console.log('TODO: Re-implement ME'); }}
+                data-dismiss="modal" onClick={this.addEvent}
               >
                 Add
               </button>

@@ -1,11 +1,12 @@
 /* eslint global-require:0 */
 
-import {createStore, compose} from 'redux';
+import thunk from 'redux-thunk';
 import reducers from '../reducers';
+import {createStore, applyMiddleware, compose} from 'redux';
 
 export default function configureStore(initialState) {
   const store = createStore(reducers, initialState, compose(
-    // applyMiddleware(invariant(), thunk),
+    applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   ));
 

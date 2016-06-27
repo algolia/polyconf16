@@ -65,12 +65,16 @@ function addEventModal(state = {visible: false}, {type, visible}) {
 }
 
 function addVenueForm(state = {}, {type, field, value}) {
+  const initialState = {};
+
   switch (type) {
     case T.ADD_VENUE_CHANGE:
       return {
         ...state,
         [field]: value
       };
+    case T.ADD_VENUE_SUBMIT:
+      return initialState;
     default:
       return state;
   }

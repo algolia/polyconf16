@@ -72,7 +72,36 @@ export function changeAddVenueForm(field, value) {
 }
 
 export function submitAddVenueForm() {
-  return {
-    type: T.ADD_VENUE_SUBMIT
+  return function(dispatch, getState) {
+    const {addVenueForm} = getState();
+
+    const errors = Object.keys(addVenueForm)
+      .map(x => addVenueForm[x])
+      .filter(x => x && x.length > 1);
+
+    // Validate form for empty values
+    if (errors.length > 1) {
+      const event = {
+        name: addVenueForm.name,
+        tags: addVenueForm.tags.split(','),
+        start: addVenueForm.start,
+        end: addVenueForm.end,
+        people: []
+      };
+
+      dispatch({
+        type: T.ADD_EVENT,
+        event
+      });
+
+      dispatch({
+        type: T.ADD_VENUE_SUBMIT
+      });
+
+      dispatch({
+        type: T.TOGGLE_MODAL,
+        visible: false
+      });
+    }
   };
 }

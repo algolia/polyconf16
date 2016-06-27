@@ -13,6 +13,7 @@
     "space-before-function-paren": 0,
     "react/prefer-stateless-function": 0,
     "comma-dangle": 0,
-    "object-curly-spacing": ["error", "never"]
+    "object-curly-spacing": ["error", "never"],
+    "func-names": 0
   }
 }

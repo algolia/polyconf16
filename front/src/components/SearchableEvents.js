@@ -1,12 +1,9 @@
 import {connect} from 'react-redux';
+import {getEvents} from '../reducers';
 import VenueEvents from './VenueEvents';
 
-function searchEvents({events, query}) {
-  return events.filter(e => e.name.match(new RegExp(query, 'i')));
-}
-
 function mapStateToProps(state) {
-  const events = searchEvents(state);
+  const events = getEvents(state);
 
   return {
     events

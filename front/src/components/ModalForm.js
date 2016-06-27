@@ -1,6 +1,9 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {addEvent} from '../actions';
+import {
+  addEvent,
+  changeAddVenueForm
+} from '../actions';
 
 class ModalForm extends React.Component {
   static get propTypes() {
@@ -13,6 +16,16 @@ class ModalForm extends React.Component {
   constructor(props) {
     super(props);
     this.dispatch = props.dispatch;
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const [name, value] = [
+      e.target.getAttribute('name'),
+      e.target.value
+    ];
+
+    this.dispatch(changeAddVenueForm(name, value));
   }
 
   render() {
@@ -27,7 +40,9 @@ class ModalForm extends React.Component {
         <input
           type="text"
           id="f-name"
+          name="name"
           className="input"
+          onChange={this.handleChange}
         />
         <label
           className="label"
@@ -38,7 +53,9 @@ class ModalForm extends React.Component {
         <input
           type="text"
           id="f-tags"
+          name="tags"
           className="input"
+          onChange={this.handleChange}
         />
         <label
           className="label"
@@ -49,7 +66,9 @@ class ModalForm extends React.Component {
         <input
           type="text"
           id="f-start"
+          name="start"
           className="input"
+          onChange={this.handleChange}
         />
         <label
           className="label"
@@ -60,7 +79,9 @@ class ModalForm extends React.Component {
         <input
           type="text"
           id="f-end"
+          name="end"
           className="input"
+          onChange={this.handleChange}
         />
       </div>
     );

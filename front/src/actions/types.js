@@ -6,3 +6,6 @@ export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 
 export const ADD_PERSON = 'ADD_PERSON';
 export const REMOVE_PERSON = 'REMOVE_PERSON';
+
+export const ADD_VENUE_CHANGE = 'ADD_VENUE_CHANGE';
+export const ADD_VENUE_SUBMIT = 'ADD_VENUE_SUBMIT';

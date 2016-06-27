@@ -1,5 +1,8 @@
 import * as T from './types';
 
+//
+// Events Actions
+//
 export function addEvent(event) {
   return {
     type: T.ADD_EVENT,
@@ -28,6 +31,9 @@ export function searchEvents(query) {
   };
 }
 
+//
+// Modal Actions
+//
 export function toggleModal(visible) {
   return {
     type: T.TOGGLE_MODAL,
@@ -35,6 +41,9 @@ export function toggleModal(visible) {
   };
 }
 
+//
+// Person Actions
+//
 export function addPerson(eventId, person) {
   return {
     type: T.ADD_PERSON,
@@ -48,5 +57,22 @@ export function removePerson(eventId, person) {
     type: T.REMOVE_PERSON,
     eventId,
     person
+  };
+}
+
+//
+// Add Venue Form Actions
+//
+export function changeAddVenueForm(field, value) {
+  return {
+    type: T.ADD_VENUE_CHANGE,
+    field,
+    value
+  };
+}
+
+export function submitAddVenueForm() {
+  return {
+    type: T.ADD_VENUE_SUBMIT
   };
 }

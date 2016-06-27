@@ -1,13 +1,6 @@
 import {combineReducers} from 'redux';
 import * as T from '../actions/types';
 
-function addRandomId(event) {
-  return {
-    ...event,
-    eventId: Math.floor(Math.random() * 1e6) + 1
-  };
-}
-
 function people(peopleList = [], action) {
   switch (action.type) {
     case T.ADD_PERSON:
@@ -20,6 +13,13 @@ function people(peopleList = [], action) {
     default:
       return peopleList;
   }
+}
+
+function addRandomId(event) {
+  return {
+    ...event,
+    eventId: Math.floor(Math.random() * 1e6) + 1
+  };
 }
 
 function events(eventsList = [], action) {
@@ -64,9 +64,27 @@ function addEventModal(state = {visible: false}, {type, visible}) {
   }
 }
 
+function addVenueForm(state = {}, {type, field, value}) {
+  switch (type) {
+    case T.ADD_VENUE_CHANGE:
+      return {
+        ...state,
+        [field]: value
+      };
+    default:
+      return state;
+  }
+}
+
+// Selectors
+export function getEvents(state) {
+  return state.events.filter(e => e.name.match(new RegExp(state.query, 'i')));
+}
+
 export default combineReducers({
   events,
   query,
-  addEventModal
+  addEventModal,
+  addVenueForm
 });
 

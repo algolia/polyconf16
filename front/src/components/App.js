@@ -45,7 +45,7 @@ class App extends React.Component {
               </div>
               <div className="column">
                 <button
-                  className="button is-danger is is-medium is-outlined"
+                  className="button is-danger is is-medium is-outlined is-fullwidth"
                   onClick={this.handleButtonClick}
                 >
                   <span className="icon">

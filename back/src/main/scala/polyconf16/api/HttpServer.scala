@@ -8,7 +8,7 @@ import org.scalatra.servlet.ScalatraListener
 trait HttpServer {
 
   def run(bootstrapClass: String): Unit = {
-    val server = new Server(8080)
+    val server = new Server(8081)
     val context = new WebAppContext()
     context setContextPath "/"
     context setResourceBase "src/main/webapp"

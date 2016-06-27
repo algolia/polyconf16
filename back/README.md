@@ -7,7 +7,7 @@
 
     sbt assembly
 
-## Run (have port 8080 available)
+## Run (have port 8081 available)
     
     sh launch.sh
 

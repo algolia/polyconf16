@@ -1,0 +1,17 @@
+version: '2'
+services:
+  sbt:
+    image: nightscape/docker-sbt:latest
+    working_dir: /app
+    command: sbt assembly
+    volumes:
+      - .:/app
+  web:
+    build: .
+    command: sh launch.sh
+    volumes:
+      - .:/app
+    ports:
+      - "8081:8081"
+    depends_on:
+      - "sbt"

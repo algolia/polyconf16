@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import RegisterContainer from './RegisterContainer';
 
 class Event extends React.Component {
   static propTypes() {
@@ -8,6 +9,7 @@ class Event extends React.Component {
       people: PropTypes.arrayOf(PropTypes.string).isRequired,
       start: PropTypes.string.isRequired,
       tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+      eventId: PropTypes.int
     };
   }
   render() {
@@ -15,7 +17,8 @@ class Event extends React.Component {
       name,
       tags,
       start,
-      people
+      people,
+      eventId
     } = this.props;
 
     return (
@@ -27,14 +30,21 @@ class Event extends React.Component {
                 <h2>{start}</h2>
               </div>
               <div className="column">
-                <div className="emoji-tags">
-                  {
-                    tags.map((x) => <span>{x}</span>)
-                  }
+                <div className="columns">
+                  <div className="column">
+                    <div className="emoji-tags">
+                      {
+                        tags.map((x) => <span>{x}</span>)
+                      }
+                    </div>
+                    <h2 className="title">{name}</h2>
+                    <h3 className="subtitle">Fast Food Burgers</h3>
+                    <a href="">88 Rue De Rivoli, Paris</a>
+                  </div>
+                  <div className="column is-narrow">
+                    <RegisterContainer eventId={eventId} />
+                  </div>
                 </div>
-                <h2 className="title">{name}</h2>
-                <h3 className="subtitle">Fast Food Burgers</h3>
-                <a href="">88 Rue De Rivoli, Paris</a>
                 <div className="people-going">
                   <div className="participants">
                     {

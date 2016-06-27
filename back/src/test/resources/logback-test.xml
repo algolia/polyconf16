@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+  <!-- send debug messages to system.out -->
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="org.eclipse.jetty" level="error"/>
+  <logger name="org.flywaydb" level="warn"/>
+  <logger name="org.scalatra.servlet.ScalatraListener" level="warn"/>
+
+  <!-- by default, the level of the root level is set to debug -->
+  <root level="info">
+    <appender-ref ref="stdout"/>
+  </root>
+</configuration>

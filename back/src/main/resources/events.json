@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Lunch party",
+    "participants": ["leo", "gianluca"],
+    "start": 1467020899,
+    "end": 1467028098,
+    "type": ["🍔", "🍕"]
+  }
+]

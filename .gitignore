@@ -1,3 +1,6 @@
 .exrc
 node_modules
 **/dist/bundle.js
+target/
+.idea/
+.DS_Store

@@ -25,7 +25,7 @@ function addRandomId(event) {
 function events(eventsList = [], action) {
   switch (action.type) {
     case T.ADD_EVENT:
-      return [...eventsList, addRandomId(action.event)];
+      return [...eventsList, action.event];
     case T.DELETE_EVENT:
       return eventsList.filter(e => e.id !== action.id);
     case T.SET_EVENTS:

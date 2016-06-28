@@ -9,6 +9,8 @@ services:
   web:
     build: .
     command: sh launch.sh
+    environment:
+      - VIRTUAL_HOST=api.algolia.dev
     volumes:
       - .:/app
     ports:

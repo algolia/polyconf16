@@ -66,3 +66,9 @@ html, body {
 .event-item {
   margin-bottom: 35px;
 }
+
+.react-selectize.dropdown-menu.default .option-wrapper,
+.react-selectize.dropdown-menu.default .option-wrapper.highlight {
+  font-size: inherit;
+  margin-bottom: 0;
+}

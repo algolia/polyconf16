@@ -1,8 +1,17 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {MultiSelect} from 'react-selectize';
 import {
   changeAddVenueForm
 } from '../actions';
+
+
+const emojis = [
+  {
+    label: 'pizza 🍕',
+    value: '🍕'
+  }
+];
 
 class ModalForm extends React.Component {
   static get propTypes() {
@@ -16,6 +25,7 @@ class ModalForm extends React.Component {
     super(props);
     this.dispatch = props.dispatch;
     this.handleChange = this.handleChange.bind(this);
+    this.filterEmojis = this.filterEmojis.bind(this);
   }
 
   handleChange(e) {
@@ -25,6 +35,12 @@ class ModalForm extends React.Component {
     ];
 
     this.dispatch(changeAddVenueForm(name, value));
+  }
+
+  filterEmojis(options, values, search) {
+    return (search)
+      ? options.filter(x => x.label)
+      : options;
   }
 
   render() {
@@ -49,13 +65,18 @@ class ModalForm extends React.Component {
         >
           Tags
         </label>
-        <input
-          type="text"
-          id="f-tags"
-          name="tags"
-          className="input"
-          onChange={this.handleChange}
-        />
+        <MultiSelect
+          open
+          placeholder="Select tags"
+          maxValues="5"
+          filterOptions={this.filterEmojis}
+          onValueChange={this.handleChange}
+        >
+          <option value="🍕">Pizza 🍕</option>
+          <option value="🍔">Hamburger 🍔</option>
+          <option value="🍟">Fries 🍟</option>
+        </MultiSelect>
+
         <label
           className="label"
           htmlFor="f-start"

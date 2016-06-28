@@ -83,7 +83,7 @@ export function submitAddVenueForm() {
     if (errors.length > 1) {
       const event = {
         name: addVenueForm.name,
-        tags: addVenueForm.tags.split(','),
+        tags: addVenueForm.tags.map(x => x.value),
         start: addVenueForm.start,
         end: addVenueForm.end,
         people: []

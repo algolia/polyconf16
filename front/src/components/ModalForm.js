@@ -5,13 +5,37 @@ import {
   changeAddVenueForm
 } from '../actions';
 
-
-const emojis = [
+const foodTags = [
   {
-    label: 'pizza 🍕',
+    label: 'Pizza',
     value: '🍕'
+  },
+  {
+    label: 'Hamburger',
+    value: '🍔'
+  },
+  {
+    label: 'Fries',
+    value: '🍟'
   }
 ];
+
+function EmojiOption({label, value}) {
+  return (
+    <div className="simple-option">
+      <span>{value}</span>
+      <span style={{marginLeft: 10}}>{label}</span>
+    </div>
+  );
+}
+
+function EmojiValue({label, value}) {
+  return (
+    <div>
+      <span style={{marginRight: 15}}>{value}</span>
+    </div>
+  );
+}
 
 class ModalForm extends React.Component {
   static get propTypes() {
@@ -25,7 +49,7 @@ class ModalForm extends React.Component {
     super(props);
     this.dispatch = props.dispatch;
     this.handleChange = this.handleChange.bind(this);
-    this.filterEmojis = this.filterEmojis.bind(this);
+    this.handleTagsChange = this.handleTagsChange.bind(this);
   }
 
   handleChange(e) {
@@ -36,11 +60,8 @@ class ModalForm extends React.Component {
 
     this.dispatch(changeAddVenueForm(name, value));
   }
-
-  filterEmojis(options, values, search) {
-    return (search)
-      ? options.filter(x => x.label)
-      : options;
+  handleTagsChange(values) {
+    this.dispatch(changeAddVenueForm('tags', values));
   }
 
   render() {
@@ -66,15 +87,18 @@ class ModalForm extends React.Component {
           Tags
         </label>
         <MultiSelect
-          open
           placeholder="Select tags"
           maxValues="5"
-          filterOptions={this.filterEmojis}
-          onValueChange={this.handleChange}
+          name="tags"
+          onValuesChange={this.handleTagsChange}
+          renderOption={EmojiOption}
+          renderValue={EmojiValue}
         >
-          <option value="🍕">Pizza 🍕</option>
-          <option value="🍔">Hamburger 🍔</option>
-          <option value="🍟">Fries 🍟</option>
+          {foodTags.map((food, index) => (
+            <option key={index} value={food.value}>
+              {food.label}
+            </option>
+          ))}
         </MultiSelect>
 
         <label

@@ -1,0 +1,4 @@
+--compilers js:babel-register
+--require __test_helper.js
+--reporter dot
+--colors

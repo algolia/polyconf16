@@ -143,19 +143,6 @@ class ModalForm extends React.Component {
           className="input"
           onChange={this.handleChange}
         />
-        <label
-          className="label"
-          htmlFor="f-end"
-        >
-            End
-        </label>
-        <input
-          type="text"
-          id="f-end"
-          name="end"
-          className="input"
-          onChange={this.handleChange}
-        />
       </div>
     );
   }

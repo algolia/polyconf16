@@ -9,7 +9,6 @@ class VenueEvents extends React.Component {
           name: PropTypes.string,
           tags: PropTypes.array,
           start: PropTypes.string,
-          end: PropTypes.string,
           participants: PropTypes.arrayOf(PropTypes.string)
         })
       ).isRequired

@@ -11,7 +11,6 @@ describe('reducers', () => {
           '🍣'
         ],
         start: '12:00',
-        end: '12:30',
         people: [
           'a',
           'b',
@@ -25,7 +24,6 @@ describe('reducers', () => {
           '🇺🇸'
         ],
         start: '14:00',
-        end: '16:30',
         people: [
           'd',
           'e',
@@ -40,7 +38,6 @@ describe('reducers', () => {
           '🇬🇧'
         ],
         start: '13:30',
-        end: '14:00',
         people: [
           'a'
         ],
@@ -60,7 +57,6 @@ describe('reducers', () => {
         name: 'My Venue',
         tags: [{label: 'pizza', value: '🍕'}],
         start: '12:00',
-        end: '13:00',
         people: []
       }
     };
@@ -72,7 +68,6 @@ describe('reducers', () => {
       addVenueForm: {},
       events: [
         {
-          end: '12:30',
           name: 'Tokyo Beaubourg',
           people: [
             'a',
@@ -86,7 +81,6 @@ describe('reducers', () => {
           ]
         },
         {
-          end: '16:30',
           name: 'MacDonald',
           people: [
             'd',
@@ -100,7 +94,6 @@ describe('reducers', () => {
           ]
         },
         {
-          end: '14:00',
           name: 'Luigi\'s Traditional Fish & Chips',
           people: [
             'a'
@@ -113,7 +106,6 @@ describe('reducers', () => {
           ]
         },
         {
-          end: '13:00',
           name: 'My Venue',
           people: [],
           start: '12:00',

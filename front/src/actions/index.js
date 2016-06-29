@@ -94,7 +94,6 @@ export function submitAddVenueForm() {
         name: addVenueForm.name,
         tags: addVenueForm.tags.map(x => x.value),
         start: addVenueForm.start,
-        end: addVenueForm.end,
         people: []
       };
 

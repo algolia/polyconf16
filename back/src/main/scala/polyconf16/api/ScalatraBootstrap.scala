@@ -7,7 +7,7 @@ import org.scalatra.{CorsSupport, LifeCycle}
 class ScalatraBootstrap extends LifeCycle {
 
   override def init(context: ServletContext) {
-    context setInitParameter(CorsSupport.AllowedMethodsKey, "GET, POST, PUT, DELETE, OPTION")
+    context setInitParameter(CorsSupport.AllowedMethodsKey, "GET,POST,PUT,DELETE,HEAD,OPTIONS,PATCH")
     context setInitParameter(CorsSupport.AllowCredentialsKey, "false")
     context setInitParameter(CorsSupport.PreflightMaxAgeKey, "0")
 

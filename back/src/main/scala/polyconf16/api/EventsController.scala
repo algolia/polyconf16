@@ -24,17 +24,33 @@ class EventsController extends BaseController {
   post("/") {
     val event = parsedBody.extract[Event]
     client.execute {
-      index into "events" `object` event
+      index into "events" `object` event objectId event.name
     }
     events add event
   }
 
   put("/:name") {
-    events.update(params("name"), parsedBody.extract[Event]).getOrElse(halt(404))
+    events
+      .update(params("name"), parsedBody.extract[Event])
+      .map { event =>
+        client.execute {
+          index into "events" `object` event objectId event.name
+        }
+        event
+      }
+      .getOrElse(halt(404))
   }
 
   delete("/:name") {
-    events.remove(params("name")).getOrElse(halt(404))
+    events
+      .remove(params("name"))
+      .map { event =>
+        client.execute {
+          algolia.AlgoliaDsl.delete from "events" objectId event.name
+        }
+        event
+      }
+      .getOrElse(halt(404))
   }
 
   get("/:emoji") {

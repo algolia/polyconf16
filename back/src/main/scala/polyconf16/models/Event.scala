@@ -9,7 +9,7 @@ import polyconf16.api.BaseController
 import scala.io.{Codec, Source}
 
 case class Event(name: String,
-                 address: String,
+                 address: Option[String],
                  people: Seq[String],
                  start: String,
                  lat: Option[Float],

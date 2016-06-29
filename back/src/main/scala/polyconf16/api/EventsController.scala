@@ -23,9 +23,9 @@ class EventsController extends BaseController {
 
   post("/") {
     val event = Try(parsedBody.extract[Event]).getOrElse(halt(400))
-    client.execute {
-      index into "events" `object` event objectId event.name
-    }
+//    client.execute {
+//      index into "events" `object` event objectId event.name
+//    }
     events add event
   }
 
@@ -33,9 +33,9 @@ class EventsController extends BaseController {
     events
       .update(params("name"), Try(parsedBody.extract[Event]).toOption)
       .map { event =>
-        client.execute {
-          index into "events" `object` event objectId event.name
-        }
+//        client.execute {
+//          index into "events" `object` event objectId event.name
+//        }
         event
       }
       .getOrElse(halt(404))
@@ -45,9 +45,9 @@ class EventsController extends BaseController {
     events
       .remove(params("name"))
       .map { event =>
-        client.execute {
-          algolia.AlgoliaDsl.delete from "events" objectId event.name
-        }
+//        client.execute {
+//          algolia.AlgoliaDsl.delete from "events" objectId event.name
+//        }
         event
       }
       .getOrElse(halt(404))

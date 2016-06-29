@@ -1,4 +1,5 @@
 import * as T from './types';
+import AlgoliaClient from '../utils/AlgoliaClient';
 
 //
 // Events Actions
@@ -19,7 +20,7 @@ export function deleteEvent(id) {
 
 export function setEvents() {
   return function(dispatch) {
-    fetch(new Request('http://localhost:8081/1/events'))
+    fetch(new Request('http://algolia.dev:8081/1/events'))
       .then(function(response) {
         return response.json();
       })
@@ -111,5 +112,18 @@ export function submitAddVenueForm() {
         visible: false
       });
     }
+  };
+}
+
+export function searchPoznanVenues(q) {
+  return function(dispatch) {
+    const client = AlgoliaClient.index('poznan_venues');
+
+    client.search(q, (err, {hits}) => {
+      return dispatch({
+        type: T.SEARCH_POZNAN_VENUES,
+        results: hits
+      });
+    });
   };
 }

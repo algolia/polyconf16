@@ -80,6 +80,18 @@ function addVenueForm(state = {}, {type, field, value}) {
   }
 }
 
+function poznanVenues(state = {results: []}, {type, results}) {
+  switch (type) {
+    case T.SEARCH_POZNAN_VENUES:
+      return {
+        ...state,
+        results
+      };
+    default:
+      return state;
+  }
+}
+
 // Selectors
 export function getEvents(state) {
   return state.events.filter(e => e.name.match(new RegExp(state.query, 'i')));
@@ -89,6 +101,7 @@ export default combineReducers({
   events,
   query,
   addEventModal,
-  addVenueForm
+  addVenueForm,
+  poznanVenues
 });
 

@@ -1,12 +1,16 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import AlgoliaClient from '../utils/AlgoliaClient';
+import camelize from 'camelize';
+
 import {
   SimpleSelect,
   MultiSelect
 } from 'react-selectize';
 
 import {
-  changeAddVenueForm
+  changeAddVenueForm,
+  searchPoznanVenues
 } from '../actions';
 
 
@@ -29,11 +33,25 @@ function EmojiValue({label, value}) {
   );
 }
 
+function VenueValue({value}) {
+  return (
+    <span>{value}</span>
+  );
+}
+
+function formatVenues(values) {
+  return values.map(x => ({
+    label: `${x.name}, ${x.address}`,
+    value: x.name
+  }));
+}
+
 class ModalForm extends React.Component {
   static get propTypes() {
     return {
       dispatch: PropTypes.func.isRequired,
-      onClose: PropTypes.func
+      onClose: PropTypes.func,
+      poznanVenues: PropTypes.array
     };
   }
 
@@ -41,7 +59,9 @@ class ModalForm extends React.Component {
     super(props);
     this.dispatch = props.dispatch;
     this.handleChange = this.handleChange.bind(this);
+    this.handleVenuesChange = this.handleVenuesChange.bind(this);
     this.handleTagsChange = this.handleTagsChange.bind(this);
+    this.searchVenues = this.searchVenues.bind(this);
   }
 
   handleChange(e) {
@@ -52,11 +72,24 @@ class ModalForm extends React.Component {
 
     this.dispatch(changeAddVenueForm(name, value));
   }
+
+  handleVenuesChange(item) {
+    if (item) {
+      this.dispatch(changeAddVenueForm('name', item.value));
+    }
+  }
+
   handleTagsChange(values) {
     this.dispatch(changeAddVenueForm('tags', values));
   }
 
+  searchVenues(search) {
+    this.dispatch(searchPoznanVenues(search));
+  }
+
   render() {
+    const {poznanVenues} = this.props;
+
     return (
       <div>
         <label
@@ -65,16 +98,17 @@ class ModalForm extends React.Component {
         >
             Venue Name
         </label>
+
         <SimpleSelect
           placeholder="Search for a venue"
           name="name"
-          className="input"
-          onValueChange={this.handleChange}
-        >
-          <option value="McDonald">McDonald</option>
-          <option value="Pizzeria da Mario">Pizzeria da Mario"</option>
-          <option value="Tokyo Beaubourg - Sushi">Tokyo Beaubourg - Sushi</option>
-        </SimpleSelect>
+          options={formatVenues(poznanVenues)}
+          onValueChange={this.handleVenuesChange}
+          filterOptions={(options) => options}
+          onSearchChange={this.searchVenues}
+          renderValue={VenueValue}
+          renderNoResultsFound={() => null}
+        />
         <label
           className="label"
           htmlFor="f-tags"
@@ -127,4 +161,6 @@ class ModalForm extends React.Component {
   }
 }
 
-export default connect()(ModalForm);
+export default connect(
+  ({poznanVenues}) => ({poznanVenues: poznanVenues.results})
+)(ModalForm);

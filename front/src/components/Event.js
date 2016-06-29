@@ -18,6 +18,7 @@ class Event extends React.Component {
       tags,
       start,
       people,
+      address,
       eventId
     } = this.props;
 
@@ -38,7 +39,7 @@ class Event extends React.Component {
                       }
                     </div>
                     <h2 className="title">{name}</h2>
-                    <a href="">88 Rue De Rivoli, Paris</a>
+                    <a href="">{address}</a>
                   </div>
                   <div className="column is-narrow">
                     <RegisterContainer eventId={eventId} />

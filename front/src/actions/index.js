@@ -54,10 +54,24 @@ export function toggleModal(visible) {
 // Person Actions
 //
 export function addPerson(eventId, person) {
-  return {
-    type: T.ADD_PERSON,
-    eventId,
-    person
+  return (dispatch, getState) => {
+    dispatch({
+      type: T.ADD_PERSON,
+      eventId,
+      person
+    });
+
+    const event = getState().events.find(e => e.eventId === eventId);
+    const url = `http://localhost:8081/1/events/${event.name}`;
+
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(event)
+    });
   };
 }
 

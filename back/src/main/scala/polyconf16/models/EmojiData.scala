@@ -1,6 +1,5 @@
 package polyconf16.models
 
-import com.typesafe.emoji.Emoji
 import org.json4s.Formats
 import org.json4s.jackson.JsonMethods._
 import org.slf4j.LoggerFactory
@@ -9,7 +8,7 @@ import polyconf16.api.BaseController
 import scala.io.{Codec, Source}
 
 case class EmojiData(keywords: Seq[String],
-                     char: Emoji,
+                     char: String,
                      category: String,
                      name: String)
 

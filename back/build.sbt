@@ -25,7 +25,6 @@ libraryDependencies += "org.json4s" %% "json4s-jackson" % json4sVersion
 //Emojis
 libraryDependencies += "com.typesafe" %% "emoji" % "1.0.0"
 
-
 assemblyJarName in assembly := "polyconf.jar"
 mainClass in assembly := Some("polyconf16.PublicApi")
 

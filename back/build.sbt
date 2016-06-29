@@ -18,6 +18,9 @@ libraryDependencies += "org.eclipse.jetty" % "jetty-webapp" % "9.3.8.v20160314"
 libraryDependencies += "org.scalatra" %% "scalatra" % scalatraVersion
 libraryDependencies += "org.scalatra" %% "scalatra-json" % scalatraVersion
 
+//Algolia
+libraryDependencies += "com.algolia" %% "algoliasearch-scala" % "[1,)"
+
 //Parsing
 libraryDependencies += "org.json4s" %% "json4s-core" % json4sVersion
 libraryDependencies += "org.json4s" %% "json4s-jackson" % json4sVersion

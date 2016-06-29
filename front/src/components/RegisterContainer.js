@@ -5,27 +5,26 @@ import {addPerson, removePerson} from '../actions';
 
 const NAME = 'gianluca';
 
-function isRegistered(events, eventName, name) {
-  console.log(events, eventName, name)
-  const event = events.find(e => e.name === eventName);
+function isRegistered(events, eventId, name) {
+  const event = events.find(e => e.eventId === eventId);
   return event.people.indexOf(name) !== -1;
 }
 
 function mapStateToProps(state, ownProps) {
   return {
-    registered: isRegistered(state.events, ownProps.eventName, NAME),
-    eventName: ownProps.eventName
+    registered: isRegistered(state.events, ownProps.eventId, NAME),
+    eventId: ownProps.eventId,
   };
 }
 
-function mapDispatchToProps(dispatch, {eventName}) {
+function mapDispatchToProps(dispatch, {eventId}) {
   return {
     handleUnregisterClick() {
-      dispatch(removePerson(eventName, NAME));
+      dispatch(removePerson(eventId, NAME));
     },
 
     handleRegisterClick() {
-      dispatch(addPerson(eventName, NAME));
+      dispatch(addPerson(eventId, NAME));
     }
   };
 }

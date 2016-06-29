@@ -8,6 +8,7 @@ class Event extends React.Component {
       people: PropTypes.arrayOf(PropTypes.string).isRequired,
       start: PropTypes.string.isRequired,
       tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+      eventId: PropTypes.int,
       key: PropTypes.int
     };
   }
@@ -17,10 +18,11 @@ class Event extends React.Component {
       tags,
       start,
       people,
+      eventId
     } = this.props;
 
     return (
-      <div className="box" key={name}>
+      <div className="box" key={eventId}>
         <article>
           <div>
             <div className="columns">
@@ -40,7 +42,7 @@ class Event extends React.Component {
                     <a href="">88 Rue De Rivoli, Paris</a>
                   </div>
                   <div className="column is-narrow">
-                    <RegisterContainer eventName={name} />
+                    <RegisterContainer eventId={eventId} />
                   </div>
                 </div>
                 <div className="people-going">

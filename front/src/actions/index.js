@@ -52,18 +52,18 @@ export function toggleModal(visible) {
 //
 // Person Actions
 //
-export function addPerson(event, person) {
+export function addPerson(eventId, person) {
   return {
     type: T.ADD_PERSON,
-    event,
+    eventId,
     person
   };
 }
 
-export function removePerson(event, person) {
+export function removePerson(eventId, person) {
   return {
     type: T.REMOVE_PERSON,
-    event,
+    eventId,
     person
   };
 }

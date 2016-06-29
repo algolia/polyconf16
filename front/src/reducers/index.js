@@ -15,6 +15,13 @@ function people(peopleList = [], action) {
   }
 }
 
+function addRandomId(event) {
+  return {
+    ...event,
+    eventId: Math.floor(Math.random() * 1e6) + 1
+  };
+}
+
 function events(eventsList = [], action) {
   switch (action.type) {
     case T.ADD_EVENT:
@@ -22,11 +29,11 @@ function events(eventsList = [], action) {
     case T.DELETE_EVENT:
       return eventsList.filter(e => e.id !== action.id);
     case T.SET_EVENTS:
-      return action.events;
+      return action.events.map(addRandomId);
     case T.ADD_PERSON:
     case T.REMOVE_PERSON:
       return eventsList.map(e => {
-        if (e.name !== action.event) {
+        if (e.eventId !== action.eventId) {
           return e;
         }
         return {...e, people: people(e.people, action)};

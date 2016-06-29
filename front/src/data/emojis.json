@@ -1,0 +1,320 @@
+[
+  {
+    "name": "hot_pepper",
+    "keywords": [
+      "food",
+      "spicy"
+    ],
+    "category": "food_and_drink",
+    "char": "🌶"
+  },
+  {
+    "name": "cheese_wedge",
+    "keywords": [
+      "food",
+      "chadder"
+    ],
+    "category": "food_and_drink",
+    "char": "🧀"
+  },
+  {
+    "name": "poultry_leg",
+    "keywords": [
+      "food",
+      "meat",
+      "drumstick",
+      "bird",
+      "chicken",
+      "turkey"
+    ],
+    "category": "food_and_drink",
+    "char": "🍗"
+  },
+  {
+    "name": "meat_on_bone",
+    "keywords": [
+      "good",
+      "food",
+      "drumstick"
+    ],
+    "category": "food_and_drink",
+    "char": "🍖"
+  },
+  {
+    "name": "hamburger",
+    "keywords": [
+      "meat",
+      "fast food",
+      "beef",
+      "cheeseburger",
+      "mcdonalds",
+      "burger king"
+    ],
+    "category": "food_and_drink",
+    "char": "🍔"
+  },
+  {
+    "name": "fries",
+    "keywords": [
+      "chips",
+      "snack",
+      "fast food"
+    ],
+    "category": "food_and_drink",
+    "char": "🍟"
+  },
+  {
+    "name": "hot_dog",
+    "keywords": [
+      "food",
+      "frankfurter",
+      "hotdog"
+    ],
+    "category": "food_and_drink",
+    "char": "🌭"
+  },
+  {
+    "name": "pizza",
+    "keywords": [
+      "food",
+      "party"
+    ],
+    "category": "food_and_drink",
+    "char": "🍕"
+  },
+  {
+    "name": "spaghetti",
+    "keywords": [
+      "food",
+      "italian",
+      "noodle"
+    ],
+    "category": "food_and_drink",
+    "char": "🍝"
+  },
+  {
+    "name": "taco",
+    "keywords": [
+      "food",
+      "mexican"
+    ],
+    "category": "food_and_drink",
+    "char": "🌮"
+  },
+  {
+    "name": "burrito",
+    "keywords": [
+      "food",
+      "mexican"
+    ],
+    "category": "food_and_drink",
+    "char": "🌯"
+  },
+  {
+    "name": "ramen",
+    "keywords": [
+      "food",
+      "japanese",
+      "noodle",
+      "chipsticks"
+    ],
+    "category": "food_and_drink",
+    "char": "🍜"
+  },
+  {
+    "name": "stew",
+    "keywords": [
+      "food",
+      "meat",
+      "soup"
+    ],
+    "category": "food_and_drink",
+    "char": "🍲"
+  },
+  {
+    "name": "sushi",
+    "keywords": [
+      "food",
+      "fish",
+      "japanese",
+      "rice"
+    ],
+    "category": "food_and_drink",
+    "char": "🍣"
+  },
+  {
+    "name": "bento",
+    "keywords": [
+      "food",
+      "japanese",
+      "box"
+    ],
+    "category": "food_and_drink",
+    "char": "🍱"
+  },
+  {
+    "name": "curry",
+    "keywords": [
+      "food",
+      "spicy",
+      "hot",
+      "indian"
+    ],
+    "category": "food_and_drink",
+    "char": "🍛"
+  },
+  {
+    "name": "rice",
+    "keywords": [
+      "food",
+      "china",
+      "asian"
+    ],
+    "category": "food_and_drink",
+    "char": "🍚"
+  },
+  {
+    "name": "icecream",
+    "keywords": [
+      "food",
+      "hot",
+      "dessert",
+      "summer"
+    ],
+    "category": "food_and_drink",
+    "char": "🍦"
+  },
+  {
+    "name": "cake",
+    "keywords": [
+      "food",
+      "dessert"
+    ],
+    "category": "food_and_drink",
+    "char": "🍰"
+  },
+  {
+    "name": "lollipop",
+    "keywords": [
+      "food",
+      "snack",
+      "candy",
+      "sweet"
+    ],
+    "category": "food_and_drink",
+    "char": "🍭"
+  },
+  {
+    "name": "doughnut",
+    "keywords": [
+      "food",
+      "dessert",
+      "snack",
+      "sweet",
+      "donut"
+    ],
+    "category": "food_and_drink",
+    "char": "🍩"
+  },
+  {
+    "name": "cookie",
+    "keywords": [
+      "food",
+      "snack",
+      "oreo",
+      "chocolate",
+      "sweet",
+      "dessert"
+    ],
+    "category": "food_and_drink",
+    "char": "🍪"
+  },
+  {
+    "name": "beer",
+    "keywords": [
+      "relax",
+      "beverage",
+      "drink",
+      "drunk",
+      "party",
+      "pub",
+      "summer",
+      "alcohol",
+      "booze"
+    ],
+    "category": "food_and_drink",
+    "char": "🍺"
+  },
+  {
+    "name": "wine_glass",
+    "keywords": [
+      "drink",
+      "beverage",
+      "drunk",
+      "alcohol",
+      "booze"
+    ],
+    "category": "food_and_drink",
+    "char": "🍷"
+  },
+  {
+    "name": "tropical_drink",
+    "keywords": [
+      "beverage",
+      "cocktail",
+      "summer",
+      "beach",
+      "alcohol",
+      "booze",
+      "mojito"
+    ],
+    "category": "food_and_drink",
+    "char": "🍹"
+  },
+  {
+    "name": "sake",
+    "keywords": [
+      "wine",
+      "drink",
+      "drunk",
+      "beverage",
+      "japanese",
+      "alcohol",
+      "booze"
+    ],
+    "category": "food_and_drink",
+    "char": "🍶"
+  },
+  {
+    "name": "tea",
+    "keywords": [
+      "drink",
+      "bowl",
+      "breakfast",
+      "green",
+      "british"
+    ],
+    "category": "food_and_drink",
+    "char": "🍵"
+  },
+  {
+    "name": "coffee",
+    "keywords": [
+      "beverage",
+      "caffeine",
+      "latte",
+      "espresso"
+    ],
+    "category": "food_and_drink",
+    "char": "☕"
+  },
+  {
+    "name": "fork_and_knife",
+    "keywords": [
+      "cutlery",
+      "kitchen"
+    ],
+    "category": "food_and_drink",
+    "char": "🍴"
+  }
+]

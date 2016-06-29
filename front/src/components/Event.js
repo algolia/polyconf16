@@ -4,7 +4,6 @@ import RegisterContainer from './RegisterContainer';
 class Event extends React.Component {
   static propTypes() {
     return {
-      end: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       people: PropTypes.arrayOf(PropTypes.string).isRequired,
       start: PropTypes.string.isRequired,

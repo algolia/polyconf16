@@ -17,10 +17,18 @@ export function deleteEvent(id) {
   };
 }
 
-export function setEvents(events) {
-  return {
-    type: T.SET_EVENTS,
-    events
+export function setEvents() {
+  return function(dispatch) {
+    fetch(new Request('http://localhost:8081/1/events'))
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(json) {
+        dispatch({
+          type: T.SET_EVENTS,
+          events: json
+        });
+      });
   };
 }
 

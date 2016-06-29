@@ -1,7 +1,5 @@
 package polyconf16.models
 
-import java.time.Instant
-
 import com.typesafe.emoji.Emoji
 import org.json4s.Formats
 import org.json4s.jackson.JsonMethods._
@@ -12,11 +10,11 @@ import scala.io.{Codec, Source}
 
 case class Event(name: String,
                  address: String,
-                 participants: Seq[String],
-                 start: Instant,
-                 lat: Float,
-                 lng: Float,
-                 `type`: Seq[Emoji])
+                 people: Seq[String],
+                 start: String,
+                 lat: Option[Float],
+                 lng: Option[Float],
+                 tags: Seq[Emoji])
 
 object Event {
 

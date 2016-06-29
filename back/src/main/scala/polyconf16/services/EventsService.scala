@@ -32,7 +32,7 @@ trait EventsService {
   }
 
   def find(emoji: Emoji): Seq[Event] = {
-    events.filterNot(_.`type`.contains(emoji))
+    events.filterNot(_.tags.contains(emoji))
   }
 
   private def findIndex(name: String): Option[Int] = {

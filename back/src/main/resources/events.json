@@ -2,10 +2,58 @@
   {
     "name": "Bar-a-Boo",
     "address": "Taczaka 11/2",
-    "participants": ["leo", "gianluca"],
-    "start": 1467020899,
+    "people": [
+      "leo",
+      "gianluca"
+    ],
+    "start": "12:00",
     "lat": 52.4058683696909,
-		"lng": 16.92040979862213,
-    "type": ["🍔", "🍕"]
+    "lng": 16.92040979862213,
+    "tags": [
+      "🍔",
+      "🍕"
+    ]
+  },
+  {
+    "name": "Tricajti",
+    "address": "Taczaka 11/2",
+    "people": [
+      "leo",
+      "rcs"
+    ],
+    "start": "12:30",
+    "lat": 52.4058683696909,
+    "lng": 16.92040979862213,
+    "tags": [
+      "🍔"
+    ]
+  },
+  {
+    "name": "Tokyo Beaubourg",
+    "address": "Taczaka 11/2",
+    "tags": ["🇯🇵", "🍣"],
+    "start": "12:00",
+    "end": "12:30",
+    "people": ["a", "b", "c"],
+    "lat": 52.4058683696909,
+    "lng": 16.92040979862213
+  },
+  {
+    "name": "MacDonald",
+    "address": "Taczaka 11/2",
+    "tags": ["🍔", "🇺🇸"],
+    "start": "14:00",
+    "end": "16:30",
+    "people": ["d", "e", "f"],
+    "lat": 52.4058683696909,
+    "lng": 16.92040979862213
+  },
+  {
+    "name": "Luigi's Traditional Fish & Chips",
+    "address": "Taczaka 11/2",
+    "tags": ["🐟", "🍟", "🇬🇧"],
+    "start": "13:30",
+    "end": "14:00",
+    "people": ["a"]
   }
 ]

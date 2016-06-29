@@ -38,7 +38,6 @@ class Event extends React.Component {
                       }
                     </div>
                     <h2 className="title">{name}</h2>
-                    <h3 className="subtitle">Fast Food Burgers</h3>
                     <a href="">88 Rue De Rivoli, Paris</a>
                   </div>
                   <div className="column is-narrow">

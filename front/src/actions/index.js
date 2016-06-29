@@ -20,7 +20,7 @@ export function deleteEvent(id) {
 
 export function setEvents() {
   return function(dispatch) {
-    fetch(new Request('http://algolia.dev:8081/1/events'))
+    fetch(new Request('http://localhost:8081/1/events'))
       .then(function(response) {
         return response.json();
       })

@@ -1,6 +1,6 @@
 [
   {
-    "name": "hot_pepper",
+    "name": "Spicy",
     "keywords": [
       "food",
       "spicy"
@@ -9,7 +9,7 @@
     "char": "🌶"
   },
   {
-    "name": "cheese_wedge",
+    "name": "Cheese",
     "keywords": [
       "food",
       "chadder"
@@ -18,7 +18,7 @@
     "char": "🧀"
   },
   {
-    "name": "poultry_leg",
+    "name": "Chicken",
     "keywords": [
       "food",
       "meat",
@@ -31,7 +31,7 @@
     "char": "🍗"
   },
   {
-    "name": "meat_on_bone",
+    "name": "Meat",
     "keywords": [
       "good",
       "food",
@@ -41,7 +41,7 @@
     "char": "🍖"
   },
   {
-    "name": "hamburger",
+    "name": "Burger",
     "keywords": [
       "meat",
       "fast food",
@@ -54,7 +54,7 @@
     "char": "🍔"
   },
   {
-    "name": "fries",
+    "name": "Fries",
     "keywords": [
       "chips",
       "snack",
@@ -64,7 +64,7 @@
     "char": "🍟"
   },
   {
-    "name": "hot_dog",
+    "name": "Hot Dog",
     "keywords": [
       "food",
       "frankfurter",
@@ -74,7 +74,7 @@
     "char": "🌭"
   },
   {
-    "name": "pizza",
+    "name": "Pizza",
     "keywords": [
       "food",
       "party"
@@ -83,7 +83,7 @@
     "char": "🍕"
   },
   {
-    "name": "spaghetti",
+    "name": "Pasta",
     "keywords": [
       "food",
       "italian",
@@ -93,7 +93,7 @@
     "char": "🍝"
   },
   {
-    "name": "taco",
+    "name": "Taco",
     "keywords": [
       "food",
       "mexican"
@@ -102,7 +102,7 @@
     "char": "🌮"
   },
   {
-    "name": "burrito",
+    "name": "Burrito",
     "keywords": [
       "food",
       "mexican"
@@ -111,7 +111,7 @@
     "char": "🌯"
   },
   {
-    "name": "ramen",
+    "name": "Noodles",
     "keywords": [
       "food",
       "japanese",
@@ -122,7 +122,7 @@
     "char": "🍜"
   },
   {
-    "name": "stew",
+    "name": "Soup",
     "keywords": [
       "food",
       "meat",
@@ -132,7 +132,7 @@
     "char": "🍲"
   },
   {
-    "name": "sushi",
+    "name": "Sushi",
     "keywords": [
       "food",
       "fish",
@@ -143,7 +143,7 @@
     "char": "🍣"
   },
   {
-    "name": "bento",
+    "name": "Bento",
     "keywords": [
       "food",
       "japanese",
@@ -153,7 +153,7 @@
     "char": "🍱"
   },
   {
-    "name": "curry",
+    "name": "Curry",
     "keywords": [
       "food",
       "spicy",
@@ -164,7 +164,7 @@
     "char": "🍛"
   },
   {
-    "name": "rice",
+    "name": "Asian",
     "keywords": [
       "food",
       "china",
@@ -174,7 +174,7 @@
     "char": "🍚"
   },
   {
-    "name": "icecream",
+    "name": "Ice Cream",
     "keywords": [
       "food",
       "hot",
@@ -185,7 +185,7 @@
     "char": "🍦"
   },
   {
-    "name": "cake",
+    "name": "Cake",
     "keywords": [
       "food",
       "dessert"
@@ -194,7 +194,7 @@
     "char": "🍰"
   },
   {
-    "name": "lollipop",
+    "name": "Sweets",
     "keywords": [
       "food",
       "snack",
@@ -205,7 +205,7 @@
     "char": "🍭"
   },
   {
-    "name": "doughnut",
+    "name": "Doughnut",
     "keywords": [
       "food",
       "dessert",
@@ -217,7 +217,7 @@
     "char": "🍩"
   },
   {
-    "name": "cookie",
+    "name": "Cookie",
     "keywords": [
       "food",
       "snack",
@@ -230,7 +230,7 @@
     "char": "🍪"
   },
   {
-    "name": "beer",
+    "name": "Beer",
     "keywords": [
       "relax",
       "beverage",
@@ -246,7 +246,7 @@
     "char": "🍺"
   },
   {
-    "name": "wine_glass",
+    "name": "Wine",
     "keywords": [
       "drink",
       "beverage",
@@ -258,7 +258,7 @@
     "char": "🍷"
   },
   {
-    "name": "tropical_drink",
+    "name": "Cocktail",
     "keywords": [
       "beverage",
       "cocktail",
@@ -272,7 +272,7 @@
     "char": "🍹"
   },
   {
-    "name": "sake",
+    "name": "Sake",
     "keywords": [
       "wine",
       "drink",
@@ -286,7 +286,7 @@
     "char": "🍶"
   },
   {
-    "name": "tea",
+    "name": "Tea",
     "keywords": [
       "drink",
       "bowl",
@@ -298,7 +298,7 @@
     "char": "🍵"
   },
   {
-    "name": "coffee",
+    "name": "Coffee",
     "keywords": [
       "beverage",
       "caffeine",
@@ -309,7 +309,7 @@
     "char": "☕"
   },
   {
-    "name": "fork_and_knife",
+    "name": "General",
     "keywords": [
       "cutlery",
       "kitchen"

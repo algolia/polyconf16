@@ -9,20 +9,8 @@ import {
   changeAddVenueForm
 } from '../actions';
 
-const foodTags = [
-  {
-    label: 'Pizza',
-    value: '🍕'
-  },
-  {
-    label: 'Hamburger',
-    value: '🍔'
-  },
-  {
-    label: 'Fries',
-    value: '🍟'
-  }
-];
+
+const foodTags = require('json!../data/emojis.json');
 
 function EmojiOption({label, value}) {
   return (
@@ -102,8 +90,8 @@ class ModalForm extends React.Component {
           renderValue={EmojiValue}
         >
           {foodTags.map((food, index) => (
-            <option key={index} value={food.value}>
-              {food.label}
+            <option key={index} value={food.char}>
+              {food.name}
             </option>
           ))}
         </MultiSelect>

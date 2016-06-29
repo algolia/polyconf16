@@ -1,7 +1,5 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import AlgoliaClient from '../utils/AlgoliaClient';
-import camelize from 'camelize';
 
 import {
   SimpleSelect,

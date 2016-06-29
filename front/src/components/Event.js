@@ -8,6 +8,7 @@ class Event extends React.Component {
       people: PropTypes.arrayOf(PropTypes.string).isRequired,
       start: PropTypes.string.isRequired,
       tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+      address: PropTypes.string,
       eventId: PropTypes.int,
       key: PropTypes.int
     };

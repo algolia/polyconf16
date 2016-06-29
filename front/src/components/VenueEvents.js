@@ -22,13 +22,16 @@ class VenueEvents extends React.Component {
     return (
       <section className="events">
         {events.map((e, i) => (
-          <div className="event-item">
+          <div
+            key={i}
+            className="event-item"
+          >
             {
               (i === 0)
                 ? <strong className="day-label">Monday, June 27</strong>
                 : null
             }
-            <Event key={i} {...e} />
+            <Event {...e} />
           </div>
         ))}
       </section>

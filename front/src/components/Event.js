@@ -9,7 +9,8 @@ class Event extends React.Component {
       people: PropTypes.arrayOf(PropTypes.string).isRequired,
       start: PropTypes.string.isRequired,
       tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-      eventId: PropTypes.int
+      eventId: PropTypes.int,
+      key: PropTypes.int
     };
   }
   render() {
@@ -22,7 +23,7 @@ class Event extends React.Component {
     } = this.props;
 
     return (
-      <div className="box">
+      <div className="box" key={eventId}>
         <article>
           <div>
             <div className="columns">
@@ -34,7 +35,7 @@ class Event extends React.Component {
                   <div className="column">
                     <div className="emoji-tags">
                       {
-                        tags.map((x) => <span>{x}</span>)
+                        tags.map((x, i) => <span key={i}>{x}</span>)
                       }
                     </div>
                     <h2 className="title">{name}</h2>

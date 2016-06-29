@@ -1,6 +1,10 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {MultiSelect} from 'react-selectize';
+import {
+  SimpleSelect,
+  MultiSelect
+} from 'react-selectize';
+
 import {
   changeAddVenueForm
 } from '../actions';
@@ -71,15 +75,18 @@ class ModalForm extends React.Component {
           className="label"
           htmlFor="f-name"
         >
-            Name
+            Venue Name
         </label>
-        <input
-          type="text"
-          id="f-name"
+        <SimpleSelect
+          placeholder="Search for a venue"
           name="name"
           className="input"
-          onChange={this.handleChange}
-        />
+          onValueChange={this.handleChange}
+        >
+          <option value="McDonald">McDonald</option>
+          <option value="Pizzeria da Mario">Pizzeria da Mario"</option>
+          <option value="Tokyo Beaubourg - Sushi">Tokyo Beaubourg - Sushi</option>
+        </SimpleSelect>
         <label
           className="label"
           htmlFor="f-tags"

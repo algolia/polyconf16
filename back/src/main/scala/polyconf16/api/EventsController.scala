@@ -1,46 +1,38 @@
 package polyconf16.api
 
+import com.typesafe.emoji.Emoji
 import polyconf16.models.Event
+import polyconf16.services.EventsService
 
-import scala.collection.mutable
+import scala.util.Try
 
 class EventsController extends BaseController {
 
-  val events = mutable.ArrayBuffer.empty ++ Event.default
-
-  def getEvent(name: String): Option[Event] = {
-    events.find(_.name == name)
-  }
-
-  def findIndex(name: String): Option[Int] = {
-    val index = events.indexWhere(_.name == name)
-    if (index == -1) {
-      None
-    } else {
-      Some(index)
-    }
-  }
+  val events = EventsService
 
   get("/") {
-    events
+    events.all()
   }
 
   get("/:name") {
-    getEvent(params("name")).fold(halt(404))(e => e)
+    events.get(params("name")).fold(halt(404))(e => e)
   }
 
   post("/") {
-    events += parsedBody.extract[Event]
+    events.add(parsedBody.extract[Event])
   }
 
   put("/:name") {
-    val index = findIndex(params("name")).getOrElse(halt(404))
-    events.update(index, parsedBody.extract[Event])
+    events.update(params("name"), parsedBody.extract[Event]).getOrElse(halt(404))
   }
 
   delete("/:name") {
-    val index = findIndex(params("name")).getOrElse(halt(404))
-    events.remove(index)
+    events.remove(params("name")).getOrElse(halt(404))
+  }
+
+  get("/:emoji") {
+    val emoji = Try(Emoji.apply(params(":emoji")))
+    emoji.map(events.find).getOrElse(halt(400))
   }
 
 }

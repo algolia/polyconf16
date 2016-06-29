@@ -2,6 +2,7 @@ package polyconf16.api
 
 import java.time.Instant
 
+import com.typesafe.emoji.Emoji
 import org.json4s.JsonAST.JField
 import org.json4s._
 import org.scalatra._
@@ -9,11 +10,15 @@ import org.scalatra.json.JacksonJsonSupport
 import org.slf4j.LoggerFactory
 
 import scala.concurrent.ExecutionContext
+import scala.util.Try
 
 object BaseController {
 
-  val jsonFormats: Formats = DefaultFormats + InstantKeySerializer + InstantValueSerializer
-
+  val jsonFormats: Formats =
+    DefaultFormats +
+      InstantKeySerializer +
+      InstantValueSerializer +
+      EmojiValueSerializer
 }
 
 trait BaseController
@@ -87,4 +92,9 @@ private case object InstantValueSerializer extends CustomSerializer[Instant](for
   case i: Instant => JInt(i.toEpochMilli)
 }))
 
+private case object EmojiValueSerializer extends CustomSerializer[Emoji](format => ( {
+  case JString(string) => Try(Emoji.apply(string)).getOrElse(throw new MappingException(s"Can't convert $string to emoji"))
+}, {
+  case e: Emoji => JString(e.toString())
+}))
 

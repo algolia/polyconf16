@@ -1,9 +1,11 @@
 [
   {
-    "name": "Lunch party",
+    "name": "Bar-a-Boo",
+    "address": "Taczaka 11/2",
     "participants": ["leo", "gianluca"],
     "start": 1467020899,
-    "end": 1467028098,
+    "lat": 52.4058683696909,
+		"lng": 16.92040979862213,
     "type": ["🍔", "🍕"]
   }
 ]

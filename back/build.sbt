@@ -7,6 +7,8 @@ scalaVersion := "2.11.8"
 val scalatraVersion = "2.4.0"
 val json4sVersion = "3.4.0"
 
+resolvers += Resolver.typesafeIvyRepo("releases")
+
 //Logging
 libraryDependencies += "org.slf4j" % "slf4j-api" % "1.7.21"
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.7"
@@ -20,6 +22,8 @@ libraryDependencies += "org.scalatra" %% "scalatra-json" % scalatraVersion
 libraryDependencies += "org.json4s" %% "json4s-core" % json4sVersion
 libraryDependencies += "org.json4s" %% "json4s-jackson" % json4sVersion
 
+//Emojis
+libraryDependencies += "com.typesafe" %% "emoji" % "1.0.0"
 
 //Testing
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test"

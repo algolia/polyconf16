@@ -1,7 +1,5 @@
 package polyconf16.models
 
-import java.time.Instant
-
 import com.typesafe.emoji.Emoji
 import org.json4s.Formats
 import org.json4s.jackson.JsonMethods._
@@ -10,22 +8,19 @@ import polyconf16.api.BaseController
 
 import scala.io.{Codec, Source}
 
-case class Event(name: String,
-                 address: String,
-                 participants: Seq[String],
-                 start: Instant,
-                 lat: Float,
-                 lng: Float,
-                 `type`: Seq[Emoji])
+case class EmojiData(keywords: Seq[String],
+                     char: Emoji,
+                     category: String,
+                     name: String)
 
-object Event {
+object EmojiData {
 
   val logger = LoggerFactory.getLogger(getClass)
-  val eventsFile = "events.json"
+  val eventsFile = "emojis.json"
   val json = Source.fromInputStream(getClass.getResourceAsStream(s"/$eventsFile"))(Codec.UTF8).mkString
 
   implicit val formats: Formats = BaseController.jsonFormats
-  logger.info("Loading events from file \"{}\"", eventsFile)
-  val default = parse(json).camelizeKeys.extract[Seq[Event]]
+  logger.info("Loading emojis from file \"{}\"", eventsFile)
+  val default = parse(json).camelizeKeys.extract[Seq[EmojiData]]
 
 }

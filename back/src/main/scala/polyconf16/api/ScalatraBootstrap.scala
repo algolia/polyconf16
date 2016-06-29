@@ -12,6 +12,7 @@ class ScalatraBootstrap extends LifeCycle {
     context setInitParameter(CorsSupport.PreflightMaxAgeKey, "0")
 
     context mount(new EventsController, "/1/events")
+    context mount(new EmojisController, "/1/emojis")
   }
 
 

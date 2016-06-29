@@ -14,7 +14,12 @@ case class Event(name: String,
                  start: String,
                  lat: Option[Float],
                  lng: Option[Float],
-                 tags: Seq[Emoji])
+                 tags: Seq[Emoji]) {
+
+  override def toString: String = {
+    s"Event $name at $address starting at $start, on tags ${tags.mkString(", ")}"
+  }
+}
 
 object Event {
 

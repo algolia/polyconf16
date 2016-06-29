@@ -27,11 +27,14 @@ trait EventsService {
     event
   }
 
-  def update(name: String, event: Event): Option[Event] = {
+  def update(name: String, event: Option[Event]): Option[Event] = {
     logger.info(s"Updating event $name with $event")
-    findIndex(name).map { i =>
-      events.update(i, event)
-      event
+    for {
+      i <- findIndex(name)
+      e <- event
+    } yield {
+      events.update(i, e)
+      e
     }
   }
 

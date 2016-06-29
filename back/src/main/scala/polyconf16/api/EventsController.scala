@@ -22,7 +22,7 @@ class EventsController extends BaseController {
   }
 
   post("/") {
-    val event = parsedBody.extract[Event]
+    val event = Try(parsedBody.extract[Event]).getOrElse(halt(400))
     client.execute {
       index into "events" `object` event objectId event.name
     }
@@ -31,7 +31,7 @@ class EventsController extends BaseController {
 
   put("/:name") {
     events
-      .update(params("name"), parsedBody.extract[Event])
+      .update(params("name"), Try(parsedBody.extract[Event]).toOption)
       .map { event =>
         client.execute {
           index into "events" `object` event objectId event.name

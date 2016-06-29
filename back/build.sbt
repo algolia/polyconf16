@@ -25,10 +25,6 @@ libraryDependencies += "org.json4s" %% "json4s-jackson" % json4sVersion
 //Emojis
 libraryDependencies += "com.typesafe" %% "emoji" % "1.0.0"
 
-//Testing
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test"
-libraryDependencies += "org.scalatra" %% "scalatra-scalatest" % scalatraVersion % "test"
-libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % "test"
 
 assemblyJarName in assembly := "polyconf.jar"
 mainClass in assembly := Some("polyconf16.PublicApi")

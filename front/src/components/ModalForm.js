@@ -39,8 +39,11 @@ function VenueValue({value}) {
 
 function formatVenues(values) {
   return values.map(x => ({
-    label: `${x.name}, ${x.address}`,
-    value: x.name
+    label: (x.address)
+      ? `${x.name}, ${x.address}`
+      : x.name,
+    value: x.name,
+    address: x.address
   }));
 }
 
@@ -73,7 +76,9 @@ class ModalForm extends React.Component {
 
   handleVenuesChange(item) {
     if (item) {
+      console.log('ITEM:', item);
       this.dispatch(changeAddVenueForm('name', item.value));
+      this.dispatch(changeAddVenueForm('address', item.address));
     }
   }
 

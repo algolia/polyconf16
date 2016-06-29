@@ -21,15 +21,13 @@ export function deleteEvent(id) {
 export function setEvents() {
   return function(dispatch) {
     fetch(new Request('http://localhost:8081/1/events'))
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(json) {
+      .then(response => response.json())
+      .then(json => (
         dispatch({
           type: T.SET_EVENTS,
           events: json
-        });
-      });
+        })
+      ));
   };
 }
 
@@ -108,22 +106,32 @@ export function submitAddVenueForm() {
         name: addVenueForm.name,
         tags: addVenueForm.tags.map(x => x.value),
         start: addVenueForm.start,
+        address: addVenueForm.address,
         people: []
       };
 
-      dispatch({
-        type: T.ADD_EVENT,
-        event
-      });
 
-      dispatch({
-        type: T.ADD_VENUE_SUBMIT
-      });
+      fetch(new Request('http://localhost:8081/1/events', {
+        headers: {'Content-Type': 'application/json'},
+        method: 'POST',
+        body: JSON.stringify(event)
+      }))
+        .then(response => response.json())
+        .then(json => {
+          dispatch({
+            type: T.ADD_EVENT,
+            event: json
+          });
 
-      dispatch({
-        type: T.TOGGLE_MODAL,
-        visible: false
-      });
+          dispatch({
+            type: T.ADD_VENUE_SUBMIT
+          });
+
+          dispatch({
+            type: T.TOGGLE_MODAL,
+            visible: false
+          });
+        });
     }
   };
 }

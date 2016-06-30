@@ -51,15 +51,15 @@ export function toggleModal(visible) {
 //
 // Person Actions
 //
-export function addPerson(eventId, person) {
+export function addPerson(name, person) {
   return (dispatch, getState) => {
     dispatch({
       type: T.ADD_PERSON,
-      eventId,
+      name,
       person
     });
 
-    const event = getState().events.find(e => e.eventId === eventId);
+    const event = getState().events.find(e => e.name === name);
     const url = `http://localhost:8081/1/events/${event.name}`;
 
     fetch(url, {
@@ -73,10 +73,10 @@ export function addPerson(eventId, person) {
   };
 }
 
-export function removePerson(eventId, person) {
+export function removePerson(event, person) {
   return {
     type: T.REMOVE_PERSON,
-    eventId,
+    event,
     person
   };
 }

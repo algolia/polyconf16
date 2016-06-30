@@ -7,5 +7,4 @@ object PublicApi {
   def main(args: Array[String]) {
     HttpServer run "ScalatraBootstrap"
   }
-
 }

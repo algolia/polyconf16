@@ -9,8 +9,6 @@ class Event extends React.Component {
       start: PropTypes.string.isRequired,
       tags: PropTypes.arrayOf(PropTypes.string).isRequired,
       address: PropTypes.string,
-      eventId: PropTypes.int,
-      key: PropTypes.int
     };
   }
   render() {
@@ -24,7 +22,7 @@ class Event extends React.Component {
     } = this.props;
 
     return (
-      <div className="box" key={eventId}>
+      <div className="box" key={name}>
         <article>
           <div>
             <div className="columns">
@@ -43,7 +41,7 @@ class Event extends React.Component {
                     <a href="">{address}</a>
                   </div>
                   <div className="column is-narrow">
-                    <RegisterContainer eventId={eventId} />
+                    <RegisterContainer eventName={name} />
                   </div>
                 </div>
                 <div className="people-going">

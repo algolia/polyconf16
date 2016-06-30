@@ -20,16 +20,20 @@ export function deleteEvent(id) {
   };
 }
 
-export function setEvents() {
+export function setEvents(events) {
   return function(dispatch) {
-    fetch(new Request('http://localhost:8081/1/events'))
-      .then(response => response.json())
-      .then(json => (
-        dispatch({
-          type: T.SET_EVENTS,
-          events: json
-        })
-      ));
+    // fetch(new Request('http://localhost:8081/1/events'))
+    //   .then(response => response.json())
+    //   .then(json => (
+    //     dispatch({
+    //       type: T.SET_EVENTS,
+    //       events: json
+    //     })
+    //   ));
+    dispatch({
+      type: T.SET_EVENTS,
+      events
+    });
   };
 }
 

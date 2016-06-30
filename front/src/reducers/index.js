@@ -45,45 +45,45 @@ function query(q = '', action) {
   }
 }
 
-function addEventModal(state = {visible: false}, {type, visible}) {
-  switch (type) {
-    case T.TOGGLE_MODAL:
-      return {
-        ...state,
-        visible
-      };
-    default:
-      return state;
-  }
-}
+// function addEventModal(state = {visible: false}, {type, visible}) {
+//   switch (type) {
+//     case T.TOGGLE_MODAL:
+//       return {
+//         ...state,
+//         visible
+//       };
+//     default:
+//       return state;
+//   }
+// }
 
-function addVenueForm(state = {}, {type, field, value}) {
-  const initialState = {};
+// function addVenueForm(state = {}, {type, field, value}) {
+//   const initialState = {};
 
-  switch (type) {
-    case T.ADD_VENUE_CHANGE:
-      return {
-        ...state,
-        [field]: value
-      };
-    case T.ADD_VENUE_SUBMIT:
-      return initialState;
-    default:
-      return state;
-  }
-}
+//   switch (type) {
+//     case T.ADD_VENUE_CHANGE:
+//       return {
+//         ...state,
+//         [field]: value
+//       };
+//     case T.ADD_VENUE_SUBMIT:
+//       return initialState;
+//     default:
+//       return state;
+//   }
+// }
 
-function poznanVenues(state = {results: []}, {type, results}) {
-  switch (type) {
-    case T.SEARCH_POZNAN_VENUES:
-      return {
-        ...state,
-        results
-      };
-    default:
-      return state;
-  }
-}
+// function poznanVenues(state = {results: []}, {type, results}) {
+//   switch (type) {
+//     case T.SEARCH_POZNAN_VENUES:
+//       return {
+//         ...state,
+//         results
+//       };
+//     default:
+//       return state;
+//   }
+// }
 
 // Selectors
 export function getEvents(state) {
@@ -93,8 +93,8 @@ export function getEvents(state) {
 export default combineReducers({
   events,
   query,
-  addEventModal,
-  addVenueForm,
-  poznanVenues
+  // addEventModal,
+  // addVenueForm,
+  // poznanVenues
 });
 

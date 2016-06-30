@@ -41,18 +41,10 @@ class App extends React.Component {
           <div className="container">
             <div className="columns">
               <div className="column is-10">
-                <SearchBar />
+
               </div>
               <div className="column">
-                <button
-                  className="button is-danger is is-medium is-outlined is-fullwidth"
-                  onClick={this.handleButtonClick}
-                >
-                  <span className="icon">
-                    <i className="fa fa-plus-circle" />
-                  </span>
-                  <span>Add Venue</span>
-                </button>
+
               </div>
             </div>
             <div className="columns">
@@ -60,9 +52,6 @@ class App extends React.Component {
                 <SearchableEvents />
               </div>
             </div>
-            <AddEventModal
-              onClose={this.handleCloseModal}
-            />
           </div>
         </section>
       </div>

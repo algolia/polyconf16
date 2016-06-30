@@ -22,7 +22,33 @@ class Event extends React.Component {
     } = this.props;
 
     return (
-     <h1>TODO: Implement Stuff</h1>
+      <div className="box" key={name}>
+        <article>
+          <div>
+            <div className="columns">
+              <div className="column is-narrow">
+                <h2>{start}</h2>
+              </div>
+              <div className="column">
+                <div className="columns">
+                  <div className="column">
+                    <div className="emoji-tags">
+                      {
+                        tags.map((x, i) => <span key={i}>{x}</span>)
+                      }
+                    </div>
+                    <h2 className="title">{name}</h2>
+                    <a href="">{address}</a>
+                  </div>
+                  <div className="column is-narrow">
+                    <RegisterContainer eventName={name} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
     );
   }
 }

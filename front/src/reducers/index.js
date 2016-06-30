@@ -23,24 +23,7 @@ function addRandomId(event) {
 }
 
 function events(eventsList = [], action) {
-  switch (action.type) {
-    case T.ADD_EVENT:
-      return [action.event, ...eventsList];
-    case T.DELETE_EVENT:
-      return eventsList.filter(e => e.id !== action.id);
-    case T.SET_EVENTS:
-      return action.events.map(addRandomId);
-    case T.ADD_PERSON:
-    case T.REMOVE_PERSON:
-      return eventsList.map(e => {
-        if (e.eventId !== action.eventId) {
-          return e;
-        }
-        return {...e, people: people(e.people, action)};
-      });
-    default:
-      return eventsList;
-  }
+  //TODO
 }
 
 function query(q = '', action) {

@@ -6,7 +6,6 @@ import {addPerson, removePerson} from '../actions';
 const NAME = 'gianluca';
 
 function isRegistered(events, eventName, name) {
-  console.log(events, eventName, name)
   const event = events.find(e => e.name === eventName);
   return event.people.indexOf(name) !== -1;
 }

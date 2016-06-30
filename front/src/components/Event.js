@@ -11,14 +11,14 @@ class Event extends React.Component {
       address: PropTypes.string,
     };
   }
+
   render() {
     const {
       name,
       tags,
       start,
       people,
-      address,
-      eventId
+      address
     } = this.props;
 
     return (
@@ -51,18 +51,6 @@ class Event extends React.Component {
                         ? `${people.length} participants`
                         : 'No participants 😓'
                     }
-                  </div>
-                  <div className="user-avatar">
-                    <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="User Avatar" />
-                  </div>
-                  <div className="user-avatar" alt="User Avatar">
-                    <img src="https://randomuser.me/api/portraits/women/56.jpg" alt="User Avatar" />
-                  </div>
-                  <div className="user-avatar">
-                    <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="User Avatar" />
-                  </div>
-                  <div className="user-avatar">
-                    <img src="https://randomuser.me/api/portraits/men/70.jpg" alt="User Avatar" />
                   </div>
                 </div>
               </div>

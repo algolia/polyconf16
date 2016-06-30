@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
   }
 
   onChange(e) {
-    this.props.dispatch(searchEvents(e.target.value));
+    //TODO
   }
 
   render() {

@@ -2,7 +2,7 @@ import algoliasearch from 'algoliasearch';
 
 const credentials = {
   applicationID: 'TF0WPJCANT',
-  key: 'd42a7c65e942f878fe96d25b840672d4'
+  key: '2d4d7ab0f3e897740abe17e65907fb91'
 };
 
 class AlgoliaClient {

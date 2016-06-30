@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import RegisterButton from './RegisterButton';
 import {addPerson, removePerson} from '../actions';
 
-const NAME = 'gianluca';
+const NAME = 'algolia';
 
 function isRegistered(events, eventId, name) {
   const event = events.find(e => e.eventId === eventId);

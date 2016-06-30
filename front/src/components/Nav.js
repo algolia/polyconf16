@@ -13,7 +13,7 @@ class Nav extends React.Component {
         </div>
         <div className="nav-right">
           <div className="user-avatar">
-            <img src="https://avatars2.githubusercontent.com/u/357937?v=3&s=460" alt="gianluca" />
+            <img src="//TODO" alt="gianluca" />
           </div>
         </div>
       </nav>

@@ -1,3 +1,5 @@
+/* eslint import/no-unresolved: 0, react/prop-types: 0 */
+
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 
@@ -23,7 +25,7 @@ function EmojiOption({label, value}) {
   );
 }
 
-function EmojiValue({label, value}) {
+function EmojiValue({value}) {
   return (
     <div>
       <span style={{marginRight: 15}}>{value}</span>
@@ -76,7 +78,6 @@ class ModalForm extends React.Component {
 
   handleVenuesChange(item) {
     if (item) {
-      console.log('ITEM:', item);
       this.dispatch(changeAddVenueForm('name', item.value));
       this.dispatch(changeAddVenueForm('address', item.address));
     }

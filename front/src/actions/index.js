@@ -1,3 +1,5 @@
+/* eslint quote-props: 0 */
+
 import * as T from './types';
 import AlgoliaClient from '../utils/AlgoliaClient';
 

@@ -12,48 +12,27 @@ trait EventsService {
   val logger = LoggerFactory.getLogger(getClass)
 
   def all(): Seq[Event] = {
-    logger.info("Getting all events")
-    events
+    Seq.empty //TODO
   }
 
   def get(name: String): Option[Event] = {
-    logger.info(s"Getting event $name")
-    events.find(_.name == name)
+    None //TODO
   }
 
   def add(event: Event): Event = {
-    logger.info(s"Adding event $event")
-    events += event
-    event
+    Event.empty //TODO
   }
 
   def update(name: String, event: Option[Event]): Option[Event] = {
-    logger.info(s"Updating event $name with $event")
-    for {
-      i <- findIndex(name)
-      e <- event
-    } yield {
-      events.update(i, e)
-      e
-    }
+    None //TODO
   }
 
   def remove(name: String): Option[Event] = {
-    logger.info(s"Removing event $name")
-    findIndex(name).map(events.remove)
+    None //TODO
   }
 
   def find(emoji: Emoji): Seq[Event] = {
-    events.filterNot(_.tags.contains(emoji))
-  }
-
-  private def findIndex(name: String): Option[Int] = {
-    val index = events.indexWhere(_.name == name)
-    if (index == -1) {
-      None
-    } else {
-      Some(index)
-    }
+    Seq.empty //TODO
   }
 
 }

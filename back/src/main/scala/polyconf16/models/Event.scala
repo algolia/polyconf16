@@ -31,4 +31,14 @@ object Event {
   logger.info("Loading events from file \"{}\"", eventsFile)
   val default = parse(json).camelizeKeys.extract[Seq[Event]]
 
+  val empty = Event(
+    name = "name",
+    address = None,
+    people = Seq.empty,
+    start = "12:00",
+    lat = None,
+    lng = None,
+    tags = Seq.empty
+  )
+
 }

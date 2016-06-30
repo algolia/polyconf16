@@ -22,42 +22,7 @@ class Event extends React.Component {
     } = this.props;
 
     return (
-      <div className="box" key={name}>
-        <article>
-          <div>
-            <div className="columns">
-              <div className="column is-narrow">
-                <h2>{start}</h2>
-              </div>
-              <div className="column">
-                <div className="columns">
-                  <div className="column">
-                    <div className="emoji-tags">
-                      {
-                        tags.map((x, i) => <span key={i}>{x}</span>)
-                      }
-                    </div>
-                    <h2 className="title">{name}</h2>
-                    <a href="">{address}</a>
-                  </div>
-                  <div className="column is-narrow">
-                    <RegisterContainer eventName={name} />
-                  </div>
-                </div>
-                <div className="people-going">
-                  <div className="participants">
-                    {
-                      people.length
-                        ? `${people.length} participants`
-                        : 'No participants 😓'
-                    }
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
+     <h1>TODO: Implement Stuff</h1>
     );
   }
 }

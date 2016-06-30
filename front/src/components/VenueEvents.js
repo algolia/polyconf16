@@ -25,11 +25,6 @@ class VenueEvents extends React.Component {
             key={i}
             className="event-item"
           >
-            {
-              (i === 0)
-                ? <strong className="day-label">Monday, June 27</strong>
-                : null
-            }
             <Event {...e} />
           </div>
         ))}

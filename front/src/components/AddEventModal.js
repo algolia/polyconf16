@@ -37,7 +37,7 @@ class AddEventModal extends React.Component {
             className="modal-background"
             onClick={this.props.onClose}
           />
-          <div className="modal-card">
+          <div className="modal-card" style={{overflow: 'visible'}}>
             <div className="modal-card-head">
               <p className="modal-card-title">Insert a new Venue</p>
               <button
@@ -45,7 +45,7 @@ class AddEventModal extends React.Component {
                 onClick={this.props.onClose}
               />
             </div>
-            <div className="modal-card-body">
+            <div className="modal-card-body" style={{overflow: 'visible'}}>
               <ModalForm onClose={onClose} />
             </div>
             <div className="modal-card-foot">
